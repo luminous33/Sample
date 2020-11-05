@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주식싹쓰리 홈페이지</title> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="static/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="static/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="static/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="static/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="static/js/Lightweight-Chart/cssCharts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<style>
+		.logo-header {
+
+			overflow: hidden;
+		}
+		.logo-header > img {
+			width: 200px;
+			height: 80px;
+			position: absolute;
+			left: 30px;
+			top: -8px;
+		}
+		.atag{
+         text-align:center;
+        }
+        a {
+          font-family: Noto Sans KR;
+          font-weight: 700;
+        }
+        h3 {
+          font-family: Noto Sans KR;
+          font-weight: 700;
+        }
+        p {
+          font-family: Noto Sans KR;
+          font-weight: 500;
+        }
+        h1 {
+          font-family: Noto Sans KR;
+          font-weight: 700;
+         }
+	</style>
+</head>
+
+<body>
+    <div id="wrapper">
+	
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+			
+            <div class="navbar-header">
+				
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				
+                <a class="navbar-brand waves-effect waves-dark logo-header" href="homepage">
+					<img src="static/img/logo_white.png">
+				</a>
+				
+				
+		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+            </div>
+        </nav>
+
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                     <li>
+                        <a class="waves-effect waves-dark" href="homepage"><i class="fa fa-dashboard"></i> 홈</a>
+                    </li>
+                    <li>
+                        <a href="/introduce" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 주식싹쓰리 소개</a>
+                    </li>
+					
+					<li>
+                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 트레이딩 전략<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                       <a href="/introbol" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 볼린저 매매</a>
+							</li>
+                            <li>
+                        <a href="/introtriple" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 삼중창 매매</a>
+                    </li>
+							<li>
+                                <a href="/introdual" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 듀얼모멘텀</a>
+                            </li>
+                        </ul>
+                    </li>
+					
+					<li>
+                        <a href="/search" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o "></i> 주식시세 검색</a>
+                    </li>
+                    
+                    
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+		  <div class="header"> 
+                        <h1 class="page-header">
+                            주식 검색 
+                        </h1>								
+		</div>
+        <div id="page-inner">
+          <div class="row">
+                <div class="container">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <td><B>회사명</B></td>
+                                <td><B>종목코드</B></td>
+                                <td><B>날짜</B></td>
+                                <td><B>시가</B></td>
+                                <td><B>고가</B></td>
+                                <td><B>저가</B></td>
+                                <td><B>종가</B></td>
+                                <td><B>차이</B></td>
+                                <td><B>총거래량</B></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for merge in merges %}
+                            <tr>
+                                <td>{{merge.company}}</td>
+                                <td>{{merge.code}}</td>
+                                <td>{{merge.date}}</td>
+                                <td>{{merge.open}}</td>
+                                <td>{{merge.high}}</td>
+                                <td>{{merge.low}}</td>
+                                <td>{{merge.close}}</td>
+                                <td>{{merge.diff}}</td>
+                                <td>{{merge.volume}}</td>
+                            </tr>
+                            {% endfor %}
+                            <tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+
+				</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/js/jquery-1.10.2.js"></script>
+
+	<!-- Bootstrap Js -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+	<script src="/static/materialize/js/materialize.min.js"></script>
+
+    <!-- Metis Menu Js -->
+		<script src="/static/js/jquery.metisMenu.js"></script>
+		 <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+
+			$(document).ready(function () {
+                $('#dataTables-example2').dataTable();
+            });
+    </script>
+    <!-- Custom Js -->
+    <script src="/static/js/custom-scripts.js"></script>
+ 
+
+</body>
+
+</html>

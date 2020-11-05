@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주식싹쓰리 홈페이지</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/static/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="/static/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="/static/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="/static/js/Lightweight-Chart/cssCharts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<style>
+		.logo-header {
+
+			overflow: hidden;
+		}
+		.logo-header > img {
+			width: 200px;
+			height: 80px;
+			position: absolute;
+			left: 30px;
+			top: -8px;
+		}
+		.atag{
+         text-align:center;
+        }
+        a {
+          font-family: Noto Sans KR;
+          font-weight: 700;
+        }
+        h3 {
+          font-family: Noto Sans KR;
+          font-weight: 700;
+        }
+        p {
+          font-family: Noto Sans KR;
+          font-weight: 600;
+         }
+
+        body {
+          font-family: Noto Sans KR;
+          font-weight: 300;
+         }
+	</style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand waves-effect waves-dark logo-header" href="homepage">
+					<img src="/static/img/logo_white.png">
+				</a>
+
+
+		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+            </div>
+
+
+        </nav>
+
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="active-menu waves-effect waves-dark" href="homepage"><i class="fa fa-dashboard"></i> 홈</a>
+                    </li>
+                    <li>
+                        <a href="/introduce" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 주식싹쓰리 소개</a>
+                    </li>
+
+					<li>
+                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 트레이딩 전략<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                        <a href="/introbol" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 볼린저 매매</a>
+							</li>
+                            <li>
+                        <a href="/introtriple" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 삼중창 매매</a>
+                    </li>
+							<li>
+                                <a href="/introdual" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 듀얼모멘텀</a>
+                            </li>
+                        </ul>
+                    </li>
+
+					<li>
+                        <a href="/search" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o "></i> 주식시세 검색</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+
+		<div id="page-wrapper">
+		  <div class="header">
+                      <!--  <h1 class="page-header">
+                            Home
+                        </h1> -->
+				<img src="/static/img/banner.png" width="100%" height="100%">
+
+		</div>
+             <div id="page-inner">
+			 <div class = "atag" style="height: 26px; width: 180px; border:1px solid black; border-radius: 5px 5px 5px 5px; background-color: #ffffff; float: right;">
+                  <img src="/static/img/naver_logo.png" width=20px height=20px>
+                  <a href="https://finance.naver.com/" target="_blank">네이버금융바로가기</a><br>
+               </div>
+                <h3>
+                  <img src="/static/img/logo_icon.png" width=30px height=30px>
+                     오늘의 증시
+               </h3>
+               <br>
+			<div class="dashboard-cards">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+
+						<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image {{color1}}">
+						<i class="material-icons dp48">import_export</i>
+						</div>
+						<div class="card-stacked {{color1}}">
+						<div class="card-content">
+						<h3>{{kospi}}&nbsp;&nbsp;</h3>
+						<h5>{{kospiChange}}</h5>
+						</div>
+						<div class="card-action">
+						<strong>코스피</strong>
+						</div>
+						</div>
+						</div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+
+						<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image {{color2}}">
+						<i class="material-icons dp48">import_export</i>
+						</div>
+						<div class="card-stacked {{color2}}">
+						<div class="card-content">
+						<h3>{{kosdak}}&nbsp;&nbsp;</h3>
+						<h5>{{kosdakChange}}</h5>
+						</div>
+						<div class="card-action">
+						<strong>코스닥</strong>
+						</div>
+						</div>
+						</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+
+							<div class="card horizontal cardIcon waves-effect waves-dark">
+						<div class="card-image {{color3}}">
+						<i class="material-icons dp48">import_export</i>
+						</div>
+						<div class="card-stacked {{color3}}">
+						<div class="card-content">
+						<h3>{{kospi200}}&nbsp;&nbsp;</h3>
+						<h5>{{kospi200Change}}</h5>
+						</div>
+						<div class="card-action">
+						<strong>코스피 200</strong>
+						</div>
+						</div>
+						</div>
+
+                    </div>
+
+                </div>
+			   </div>
+			   <h3>
+					<img src="/static/img/logo_icon.png" width=30px height=30px>
+					    듀얼 모멘텀
+                    <a href="introdual"><img src="/static/img/question.png" width="30px" height="30px"></a>
+				</h3>
+				<br>
+                <div class="col-md-12">
+                    <div class="card" style="padding-left: 30px; padding-top: 10px;">
+                        종목수 :
+                        <input type="text" id="dualcount" placeholder="20" style="width:150px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        시작일자 :
+                        <input type="text" id="dualstart" placeholder="ex) 2020-01-01" style="width:150px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        종료일자 :
+                        <input type="text" id="dualend" placeholder="ex) 2020-04-01" style="width:150px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <button type="button" class="btn btn-danger" onclick="redirect3();" style="margin-left: 20px;">검색</button>
+                    </div>
+                </div>
+
+				<div class="row">
+                <div class="col-md-6">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <div class="card-action">
+                             <p style="text-align: center; font-size:1.5em;">상대모멘텀</p>
+                        </div>
+                        <h6 style="text-align: right; margin-right: 20px; color: DimGray;">기간 : {{dualstart}} ~ {{dualend}} </h6>
+
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>종목코드</th>
+											<th>종목명</th>
+											<th>시작일종가</th>
+											<th>종료일종가</th>
+											<th>수익률</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       {% if d %}
+										{% for i in d %}
+										<tr>
+										<td>{{i.code}}</td>
+										<td>{{i.company}}</td>
+										<td>{{i.old_price}}</td>
+										<td>{{i.new_price}}</td>
+										<td>{{i.returns}}</td>
+										</tr>
+										{% endfor %}
+										{% endif %}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+
+				 <div class="col-md-6">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <div class="card-action">
+                             <p style="text-align: center; font-size:1.5em;">절대모멘텀</p>
+                        </div>
+                        <h6 style="text-align: right; margin-right: 20px; color: DimGray;">기간 : {{dualstart2}} ~ {{dualend2}}</h6>
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
+                                    <thead>
+                                        <tr>
+                                            <th>종목코드</th>
+											<th>종목명</th>
+											<th>시작일종가</th>
+											<th>종료일종가</th>
+											<th>수익률</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       {% if d2 %}
+										{% for i in d2 %}
+										<tr>
+										<td>{{i.code}}</td>
+										<td>{{i.company}}</td>
+										<td>{{i.old_price}}</td>
+										<td>{{i.new_price}}</td>
+										<td>{{i.returns}}</td>
+										</tr>
+										{% endfor %}
+										{% endif %}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+			    <h3>
+					<img src="/static/img/logo_icon.png" width=30px height=30px>
+					    종목별 트레이딩 전략 분석
+				</h3>
+				<br>
+
+				<div class="row">
+				<div class="col-md-12">
+                    <div class="card">
+                        <div class="card-action" style='height:auto'>
+						 <form>
+						  주식명 :
+						  <input type="text" placeholder="종목명 또는 회사명을 입력해주세요." id="stockname1">
+						  시작일자 :
+						  <input type="text" placeholder="연도-월-일 시작일을 설정해 주세요 ex)2019-01-01" id="startdate">
+
+						 <button type="button" class="btn btn-danger" onclick="redirect();">볼린저</button>
+						  <button type="button" class="btn btn-warning" onclick="redirect2();">삼중창</button>
+
+                         </form>
+						</div>
+
+
+				</div>
+                </div>
+                <h3>
+					<img src="/static/img/logo_icon.png" width=30px height=30px>
+					    딥러닝 주가 예측
+				</h3>
+				<br>
+<!--				<div class="row">-->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-action" style='height:auto'>
+                             <form>
+                              주식명 :
+                              <input type="text" placeholder="종목명 또는 회사명을 입력해주세요." id="stockname2">
+
+                             <button type="button" class="btn btn-info" onclick="redirect1();">딥러닝</button>
+                             </form>
+                            </div>
+                        </div>
+                     </div>
+				</div>
+
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/js/jquery-1.10.2.js"></script>
+
+	<!-- Bootstrap Js -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+	<script src="/static/materialize/js/materialize.min.js"></script>
+
+    <!-- Metis Menu Js -->
+		<script src="/static/js/jquery.metisMenu.js"></script>
+		 <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+
+<!--            $(document).ready(function () {-->
+
+<!--                dataTables-example.fnSort( [ [4,'asc'] );-->
+<!--            });-->
+
+			$(document).ready(function () {
+                $('#dataTables-example2').dataTable();
+            });
+    </script>
+    <!-- Custom Js -->
+    <script src="/static/js/custom-scripts.js"></script>
+	<script>
+
+		const redirect = () => {
+			const stockname1 = document.getElementById("stockname1");
+			const startdate = document.getElementById("startdate");
+
+			console.log(stockname1.value);
+			console.log(startdate.value);
+			window.location.href = `/bol2?name=${stockname1.value}&startdate=${startdate.value}`;
+		}
+		const redirect1 = () => {
+			const stockname2 = document.getElementById("stockname2");
+			console.log(stockname2.value);
+			window.location.href = `/deep?name=${stockname2.value}`;
+		}
+		const redirect2 = () => {
+			const stockname1 = document.getElementById("stockname1");
+			const startdate = document.getElementById("startdate");
+
+			console.log(stockname1.value);
+			console.log(startdate.value);
+			window.location.href = `/triple?name=${stockname1.value}&startdate=${startdate.value}`;
+		}
+		const redirect3 = () => {
+			const dualcount = document.getElementById("dualcount");
+			const dualstart = document.getElementById("dualstart");
+			const dualend = document.getElementById("dualend");
+
+			console.log(dualcount.value);
+			console.log(dualstart.value);
+			console.log(dualend.value);
+			window.location.href = `/homepage/?dualcount=${dualcount.value}&dualstart=${dualstart.value}&dualend=${dualend.value}`;
+		}
+	</script>
+
+
+</body>
+
+</html>
