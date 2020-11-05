@@ -1,0 +1,58 @@
+
+
+ 구독자수와 조회수 관계 구독자수가 많으면 조회수가 높은지
+ 
+ 탐색적 데이터 분석
+ 각 카테고리별 구독자수, 조회수, 영상길이, 좋아요수 
+
+ 필요없는 칼럼제거 (썸네일)
+
+ csv.describe()
+
+ 댓글수/조회수 (댓글비율1) , 댓글수/구독자수 (댓글비율2)(구독자라도 영상안볼수)
+ 영상일자 추가하기 , 
+
+
+tips.groupby("카테고리")[["조회수"]].mean()
+tips.groupby("카테고리")[["영상길이"]].mean()
+tips.groupby("카테고리")[["구독자수"]].mean()
+
+
+tips.groupby("유투버")[["조회수"]].mean()
+
+tips.groupby("유투버")[["구독자수"]].mean()
+tips.groupby("유투버")[["구독자수"]].mean()
+
+tips.groupby("유투버")[["댓글수"]].mean()
+
+
+tips.groupby("유투버")[["댓글수"]].var()
+tips.groupby("유투버")[["조회수"]].var()
+
+
+np.corrcoef()
+
+한카테고리당
+data_result['조회수'].plot(kind="barh",figsize=(10,5),grid=True)  >> 유투버당 조회수
+data_result['구독자수'].plot(kind="barh",figsize=(10,5),grid=True) 
+data_result['댓글수'].plot(kind="barh",figsize=(10,5),grid=True) 
+data_result['영상길이'].plot(kind="barh",figsize=(10,5),grid=True) 
+모든 카테고리 합한거에서
+data_result['조회수'].plot(kind="barh",figsize=(10,5),grid=True)  >> 카테고리당 조회수
+
+
+스케일링하기
+조회수 댓글 구독자 좋아요
+
+from sklearn import preprocessing
+
+min_max_scaler = preprocessing.MinMaxScaler()
+
+# 조회수 발생건수와 댓글율을 각각 조회수, 댓글 라는 컬럼으로 통합
+유투버 유명도 = 조회수 , 댓글, 구독자수
+
+# 강도, 살인, 폭력간의 상관관계 
+sns.pairplot(crime_anal_norm, vars =["좋아요","조회수","댓글수"], size = 4,
+            kind = "reg")
+
+히트맵 카테고리당 좋아요, 구독자, 조회, 댓글수

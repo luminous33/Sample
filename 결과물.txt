@@ -1,0 +1,25 @@
+	"컨텐츠, 키워드,기간,조회수, 댓글수, 좋아요/싫어요 수, 댓글(키워드)"	조회수					
+							
+							
+							
+	name	view	previous_time	start_date	comment	likes_num	unlikes_num
+0	[Eng] 지금 딱 필요한?픽서&파우더 고르고 사용하는 방법 l 이사배(RISABAE Makeup)	7만회	1일 전		댓글 163개	2.2천개	14개
+1	[랜선집들이] 이사배 새로운 집 공개! Welcome To My New House (+Eng) l 이사배(RISABAE Makeup)	60만회	1주 전		댓글 674개	1.2만개	215개
+2	[Eng] (여자)아이들 'OH MY GOD' 민니 커버메이크업 (G)I-DLE MINNIE Makeup Tutorial l 이사배(RISABAE Makeup)	15만회	2주 전		댓글 457개	4.5천개	36개
+3	[ASMR] 왓츠 (wrong) 인 마이 백  (Aㅏ..Sㅏ배는..Mㅜ Rㅣ..) Eng sub l 이사배(RISABAE Makeup)	9.8만회	3주 전		댓글 250개	2천개	49개
+4	[Eng] 왕초보 기본 메이크업 - 컨실러 100% 활용 꿀팁 Beginner Makeup - Concealer Tips & Uses l 이사배(RISABAE Makeup)	36만회	4주 전		댓글 356개	8.1천개	97개
+5	[Eng] 데일리 메이크업에 간단한 아이포인트 주기???? l 이사배(RISABAE Makeup)	16만회	1개월 전		댓글 327개	4천개	46개
+6	[Eng] 온라인 쇼핑으로 산! 2020 봄 신상??패션 하울 ??  2020 Spring Fashion Haul l 이사배(RISABAE Makeup)	18만회	1개월 전		댓글 601개	3.3천개	58개
+7	두아 리파 (Dua Lipa) 커버 메이크업 Dua Lipa Makeup Tutorial l 이사배(RISABAE Makeup)	18만회	1개월 전		댓글 773개	6천개	35개
+8	[Eng] 간단하게 싹 닦아드립니다? 메이크업 제품 묵은 때 벗기기?? How to clean your makeup products l 이사배(RISABAE Makeup)	26만회	1개월 전		댓글 324개	5.9천개	40개
+9	[Eng] 봄신상 간단리뷰 하면서 프레피 룩 메이크업하기???l 이사배(RISABAE Makeup)	24만회	1개월 전		댓글 353개	5.2천개	59개
+10	[나혼산 리뷰] ZOZI나 마켓가서 쎗뚜쎗뚜로 다 샀뚜샀뚜♥??♥ l 이사배(RISABAE Makeup)	52만회	2개월 전		댓글 745개	1.2만개	127개
+11	[세로 메이크업] ?????? l 이사배(RISABAE Makeup)	10만회	2개월 전		댓글 250개	2.3천개	23개
+12	[Eng] #풀뱅 #겉보속촉 #레드립 ??♥? l 이사배(RISABAE Makeup)	18만회	2개월 전		댓글 358개	3.5천개	61개
+13	[Eng] 봄빛 가득??내추럴 글로우 메이크업 Natural Glow Makeup l 이사배(RISABAE Makeup)	31만회	2개월 전		댓글 420개	8천개	70개
+14	[Eng] 인기 많았던 뉴욕 메이크업??l 이사배(RISABAE Makeup)	30만회	3개월 전		댓글 285개	5.2천개	123개
+15	[Eng] TMC(=투 머치 캐리어)?? 이사배 캐리어 속 아이템 대방출! l 이사배(RISABAE Makeup)	20만회	3개월 전		댓글 243개	3.2천개	57개
+16	[Eng] 이사배 최애브러시 등극 쾌거 Top5 ??? l 이사배(RISABAE Makeup)	22만회	3개월 전		댓글 241개	3.8천개	75개
+17	[Eng] No광고! 취향저격 당한 샤넬 신상컬렉션으로 풀 메이크업 Full Face Using CHANEL Makeupl 이사배(RISABAE Makeup)	29만회	3개월 전		댓글 370개	5.8천개	87개
+18	[Eng] 파운데이션 별 도구 궁합 간단요약정리! - 백투베이직 l 이사배(RISABAE Makeup)	24만회	3개월 전		댓글 336개	5천개	61개
+19	요청폭주로 돌아온! 대체 저걸 누가 사??????♀? 2탄 ! ! (ft.누가 좀 말려주세요?????♀?) l 이사배(RISABAE Makeup)	37만회	4개월 전		댓글 984개	8.2천개	92개
