@@ -47,7 +47,7 @@ class DualMomentum:
             - stock_count : 상대 모멘텀을 구할 종목수
         """
         connection = pymysql.connect(host='localhost', port=3306,
-                                     db='INVESTAR', user='root', passwd='1111', autocommit=True)
+                                     db='investar', user='root', passwd='1111', autocommit=True)
         cursor = connection.cursor()
 
         # 사용자가 입력한 시작일자를 DB에서 조회되는 일자로 보정
@@ -110,7 +110,7 @@ class DualMomentum:
         """
         stockList = list(rltv_momentum['code'])
         connection = pymysql.connect(host='localhost', port=3306,
-                                     db='INVESTAR', user='root', passwd='1111', autocommit=True)
+                                     db='investar', user='root', passwd='1111', autocommit=True)
         cursor = connection.cursor()
 
         # 사용자가 입력한 매수일을 DB에서 조회되는 일자로 변경
